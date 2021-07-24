@@ -3,8 +3,23 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  firebaseConfig : {
+    apiKey: "AIzaSyAa8IcZX2FgADMEPpN2OW2Vi4EH_giYYy8",
+    authDomain: "ngecommerce-58e09.firebaseapp.com",
+    databaseURL: "https://ngecommerce-58e09-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "ngecommerce-58e09",
+    storageBucket: "ngecommerce-58e09.appspot.com",
+    messagingSenderId: "901300533125",
+    appId: "1:901300533125:web:917af5bdcb625bb58076ec",
+    measurementId: "G-Y1N7MRWT04"
+  }
 };
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file

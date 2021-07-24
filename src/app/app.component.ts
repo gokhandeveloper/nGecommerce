@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {LoginService} from "./services/login/LoginService";
+import {AppUser} from "../models/app-user";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'nGecommerce';
+  title = 'ChocolateBox';
+  appUser: AppUser | undefined ;
+  constructor(private loginService: LoginService) {
+  }
+  checkLogin() {
+   return this.loginService.checkLogin();
+
+  }
+  getUser() {
+    return this.loginService.getUser();
+  }
 }

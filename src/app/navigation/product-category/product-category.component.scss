@@ -1,0 +1,28 @@
+.product-category {
+  background: #ff56a8;
+  height:50px;
+
+  .nav a{
+    color: white;
+    text-transform: uppercase;
+    height: 50px;
+    /* padding: 0px; */
+    margin: -16px 0px 10px 0px;
+    padding-top: 13px;
+    border-left: white 1px solid;
+    border-radius: 0;
+  }
+  .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: white;
+    color: #ff56a8;
+    text-transform: uppercase;
+
+    height: 50px;
+    /* padding: 0px; */
+
+    border-style: none;
+
+  }
+
+}
+
