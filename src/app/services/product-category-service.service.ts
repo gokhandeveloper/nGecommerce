@@ -9,8 +9,7 @@ export class ProductCategoryServiceService {
   constructor(private db:AngularFireDatabase) { }
 
   getCategories() {
+  return this.db.list('/product-categories').valueChanges();
 
-
-    return this.db.list('/product-categories').valueChanges();
   }
 }
