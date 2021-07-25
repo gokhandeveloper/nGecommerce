@@ -23,6 +23,9 @@ export class LoginService {
      if(user ) {
        userService.save(user);
        const returnUrl = localStorage.getItem('returnUrl');
+       if(returnUrl) {
+         localStorage.removeItem(returnUrl);
+       }
        router.navigateByUrl(returnUrl!);
        this.userLoggedin=true;
      }
@@ -43,36 +46,7 @@ export class LoginService {
     }))
 
 
-    // const mappedAppUser = new Observable<AppUser>((observer) => {
-    //   var fireBaseuser;
-    //   this.user$.subscribe(user => {
-    //     if (user) {
-    //       fireBaseuser = this.userService.get(user.uid);
-    //     }
-    //   });
-    //   if (fireBaseuser) {
-    //     observer.next(fireBaseuser);
-    //   } else {
-    //     observer.error('Geolocation not available');
-    //   }
-    //
-    //
-    // });
-    //
-    //
-    // let appUser: AppUser;
-    // this.user$.pipe(map(user => {
-    //   appUser.name = <string>user?.displayName;
-    // }));
-    //
-    // return mappedAppUser;
 
-
-    // photo: any;
-    // uid: string;
-    // name: string;
-    // email: string;
-    // isAdmin: boolean;
   }
 
   checkLogin() {
