@@ -35,14 +35,9 @@ export class ProductServiceService {
 
   }
   getAll() {
-   // var test;
-   // test=this.db.list('products').snapshotChanges();
-   // return test;
-
     return this.db.list('products').snapshotChanges().pipe(
       map(actions => actions.map(a => {
         var product:Product= {whenShipping:"", productSummary:"",productName:"",key:"", price:0,category:"",imageUrl:""};
-
         product.productName = a.payload.child('productName').val()
         product.imageUrl = a.payload.child('imageUrl').val()
         product.price = a.payload.child('price').val()
@@ -50,10 +45,8 @@ export class ProductServiceService {
         product.key = a.key;
         product.whenShipping="";
         return product;
-
       }))
     );
-
   }
 
   delete(id: any) {

@@ -50,13 +50,10 @@ export class LoginService {
   }
 
   checkLogin() {
-    console.log(this.user$);
-    console.log(this.userLoggedin);
     return this.userLoggedin;
 
   }
   getUser() {
-     console.log(this.appUser$);
      return this.appUser$;
   }
   private login(){
