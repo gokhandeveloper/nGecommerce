@@ -29,6 +29,7 @@ export class ProductServiceService {
         product.productSummary= a.payload.child('productSummary').val()
         product.key = a.key;
         product.whenShipping="";
+        product.category =a.payload.child('category').val();
         return product;
 
       }))
