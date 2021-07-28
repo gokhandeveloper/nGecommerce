@@ -17,8 +17,8 @@ export class ProductCategoryServiceService {
     .pipe(
       map(actions => actions.map(a => {
         var category: ProductCategory= {key:"", url:""};
-        console.log(a.payload.child);
-        console.log(a);
+        // console.log(a.payload.child);
+        // console.log(a);
 
         category.key = a.payload.key;
         category.url = a.payload.child('category_name').val()

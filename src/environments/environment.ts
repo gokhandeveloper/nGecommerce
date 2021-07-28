@@ -8,14 +8,14 @@ export const environment = {
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   firebaseConfig : {
-    apiKey: "AIzaSyAa8IcZX2FgADMEPpN2OW2Vi4EH_giYYy8",
-    authDomain: "ngecommerce-58e09.firebaseapp.com",
-    databaseURL: "https://ngecommerce-58e09-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "ngecommerce-58e09",
-    storageBucket: "ngecommerce-58e09.appspot.com",
-    messagingSenderId: "901300533125",
-    appId: "1:901300533125:web:917af5bdcb625bb58076ec",
-    measurementId: "G-Y1N7MRWT04"
+    apiKey: "AIzaSyBgIThVv4DkHfbpyjgdJjBm_U6VHvUSqBQ",
+    authDomain: "chocolatebox-54e84.firebaseapp.com",
+    projectId: "chocolatebox-54e84",
+    databaseURL: "https://chocolatebox-54e84-default-rtdb.asia-southeast1.firebasedatabase.app",
+    storageBucket: "chocolatebox-54e84.appspot.com",
+    messagingSenderId: "42245920541",
+    appId: "1:42245920541:web:cf48217f02ced7901233f4",
+    measurementId: "G-QNS53G6J3X"
   }
 };
 

@@ -18,7 +18,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { LoginComponent } from './login/login.component';
 import { TopWarningComponent } from './warning/top-warning/top-warning.component';
 import { ProductCategoryComponent } from './navigation/product-category/product-category.component';
-import { LoggedinNavigationComponent } from './navigation/loggedin-navigation/loggedin-navigation.component';
+import { LoggedInNavigationComponent } from './navigation/loggedin-navigation/logged-in-navigation.component';
 import {DropdownDirective} from "./navigation/dropdown.directive";
 import {LoginService} from "./services/login/LoginService";
 import { AuthguardComponent } from './services/authguard/authguard.component';
@@ -30,6 +30,8 @@ import {ProductCategoryServiceService} from "./services/product-category-service
 import {ProductServiceService} from "./services/product-service.service";
 import {ForbiddenValidatorDirective} from "./admin/shared/forbidden-name.directive";
 import {AdminCustomProductsComponent} from "./admin/admin-custom-products/admin-custom-products.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from "@angular/material/icon";
 
 const routes = [
   {path: '', component: ProductsComponent},
@@ -66,7 +68,7 @@ const routes = [
     LoginComponent,
     TopWarningComponent,
     ProductCategoryComponent,
-    LoggedinNavigationComponent,
+    LoggedInNavigationComponent,
     DropdownDirective,
     AuthguardComponent,
     ProductFormComponent,
@@ -79,7 +81,9 @@ const routes = [
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatIconModule
 
   ],
 
