@@ -29,7 +29,7 @@ import {FormsModule} from "@angular/forms";
 import {ProductCategoryServiceService} from "./services/product-category-service.service";
 import {ProductServiceService} from "./services/product-service.service";
 import {ForbiddenValidatorDirective} from "./admin/shared/forbidden-name.directive";
-
+import {AdminCustomProductsComponent} from "./admin/admin-custom-products/admin-custom-products.component";
 
 const routes = [
   {path: '', component: ProductsComponent},
@@ -44,6 +44,9 @@ const routes = [
   {path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthguardComponent, AdminGuard]},
   {path: 'admin/products/:id', component: ProductFormComponent, canActivate: [AuthguardComponent, AdminGuard]},
   {path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthguardComponent, AdminGuard]},
+
+  {path: 'admin/custom-blind-products', component: AdminCustomProductsComponent},
+
 
   {path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthguardComponent, AdminGuard]}
 
@@ -67,7 +70,8 @@ const routes = [
     DropdownDirective,
     AuthguardComponent,
     ProductFormComponent,
-    ForbiddenValidatorDirective
+    ForbiddenValidatorDirective,
+    AdminCustomProductsComponent
   ],
   imports: [
     BrowserModule,

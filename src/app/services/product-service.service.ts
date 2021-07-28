@@ -22,12 +22,13 @@ export class ProductServiceService {
     return this.db.object('/products/'+productId).snapshotChanges()
       .pipe(map(a=> {
         var product:Product= {whenShipping:"",productSummary:"",productName:"",key:"", price:0,category:"",imageUrl:""};
-
         product.productName = a.payload.child('productName').val()
         product.imageUrl = a.payload.child('imageUrl').val()
         product.price = a.payload.child('price').val()
         product.productSummary= a.payload.child('productSummary').val()
-        product.key = a.key;
+         if(a.key!==null) {
+           product.key = a.key
+         }
         product.whenShipping="";
         product.category =a.payload.child('category').val();
         return product;
@@ -43,8 +44,11 @@ export class ProductServiceService {
         product.imageUrl = a.payload.child('imageUrl').val()
         product.price = a.payload.child('price').val()
         product.productSummary = a.payload.child('productSummary').val()
-        product.key = a.key;
+        if(a.key!==null) {
+          product.key = a.key
+        }
         product.whenShipping="";
+        product.category = a.payload.child('category').val()
         return product;
       }))
     );
