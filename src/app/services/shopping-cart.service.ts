@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import {AngularFireDatabase} from "@angular/fire/database";
-import {Product} from "../models/product";
+import {Product} from "../../models/product";
 import {map, take} from 'rxjs/operators';
 import {Observable} from "rxjs";
-import {ShoppingCart, ShoppingCartItem} from "../models/ShoppingCart";
+import {ShoppingCart} from "../../models/ShoppingCart";
+import {ShoppingCartItem} from "../../models/shopping-cart-item";
 
 @Injectable({
   providedIn: 'root'
@@ -16,14 +17,12 @@ export class ShoppingCartService {
   async getCart(): Promise<Observable<ShoppingCart>> {
     let cartId = await this.getOrCreateCartId();
    // console.log(cartId);
-    return this.db.object('shopping-carts/' + cartId).snapshotChanges()
-      .pipe(map(s=> {
-        let cartItems= s.payload.child("items").val();
-          let cart: ShoppingCart=
-            new ShoppingCart(cartItems);
-          return cart;
+    return this.db.object('/shopping-carts/' + cartId).snapshotChanges()
+      .pipe(map(s =>
+          new ShoppingCart(s.payload.child("items").val())
 
-      }));
+
+    ));
 
   }
   createCart() {
@@ -53,15 +52,15 @@ export class ShoppingCartService {
   }
 
   async addProductToCart(product: Product) {
-    this.updateProductQuantity(product, +1)
+    this.updateProduct(product, +1)
 
   }
 
   async removeFromCart(product: Product) {
-  this.updateProductQuantity(product, -1)
+  this.updateProduct(product, -1)
   }
 
-    private async updateProductQuantity(product: Product, change: number) {
+    private async updateProduct(product: Product, change: number) {
       let cartId = await this.getOrCreateCartId();
       let item$:Observable<any> = this.db.object('shopping-carts/'+ cartId + /items/ + product.key)
         .valueChanges();
@@ -69,8 +68,12 @@ export class ShoppingCartService {
       let item$$= this.db.object('shopping-carts/'+ cartId + /items/ + product.key);
 
       item$.pipe(take(1)).subscribe(item =>{
-        if(item === null) item$$.set({product:product, quantity:change});
-        else item$$.update({quantity: item.quantity+ change});
+        if(item === null) item$$.set(
+          {title: product.productName,
+          imageUrl: product.imageUrl,
+          price: product.price});
+        else item$$.update(
+          {quantity: (item.quantity || 0)+ change});
 
       })
     }

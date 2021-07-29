@@ -32,6 +32,8 @@ import {ForbiddenValidatorDirective} from "./admin/shared/forbidden-name.directi
 import {AdminCustomProductsComponent} from "./admin/admin-custom-products/admin-custom-products.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from "@angular/material/icon";
+import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
+import {ShoppingCart} from "../models/ShoppingCart";
 
 const routes = [
   {path: '', component: ProductsComponent},
@@ -73,7 +75,9 @@ const routes = [
     AuthguardComponent,
     ProductFormComponent,
     ForbiddenValidatorDirective,
-    AdminCustomProductsComponent
+    AdminCustomProductsComponent,
+    ProductQuantityComponent
+
   ],
   imports: [
     BrowserModule,
