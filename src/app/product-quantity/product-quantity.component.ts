@@ -37,11 +37,7 @@ export class ProductQuantityComponent implements OnInit, OnDestroy{
   getCartQuantity() {
     if(this.shoppingCart && this.item.productId)  {
       let productKey = this.item.productId;
-      //return product;
-      console.log(this.shoppingCart.itemsMap)
-      console.log(productKey)
       let item= this.shoppingCart.itemsMap[productKey];
-      console.log(item);
       return item ?item.quantity : 0;
     }
   }
