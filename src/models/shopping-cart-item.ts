@@ -1,5 +1,3 @@
-import {Product} from "./product";
-
 export class ShoppingCartItem {
   title: string="";
   imageUrl : string="";

@@ -3,6 +3,7 @@ import {Product} from "../../models/product";
 import {ShoppingCartService} from "../services/shopping-cart.service";
 import {Subscription} from "rxjs";
 import {ShoppingCart} from "../../models/ShoppingCart";
+import {ShoppingCartItem} from "../../models/shopping-cart-item";
 
 @Component({
   selector: 'product-quantity',
@@ -10,7 +11,7 @@ import {ShoppingCart} from "../../models/ShoppingCart";
   styleUrls: ['./product-quantity.component.css']
 })
 export class ProductQuantityComponent implements OnInit, OnDestroy{
-  @Input('product') product: Product | any  ;
+  @Input('product') item: ShoppingCartItem | any  ;
   subscription$: Subscription = new Subscription;
   private shoppingCart$: any;
   shoppingCart!: ShoppingCart;
@@ -19,11 +20,9 @@ export class ProductQuantityComponent implements OnInit, OnDestroy{
 
   }
 
-
   async ngOnInit() {
    this.subscription$ = (await this.cartService.getCart())
      .subscribe(cart => this.shoppingCart = cart);
-
 }
 
   ngOnDestroy() {
@@ -31,22 +30,23 @@ export class ProductQuantityComponent implements OnInit, OnDestroy{
   }
 
   addToCart() {
-    this.cartService.addProductToCart(this.product);
+    this.cartService.addProductToCart(this.item);
 
   }
 
   getCartQuantity() {
-  //  if(this.shoppingCart===undefined || this.product.key===undefined) return 0 ;
-    let productKey = this.product.key;
-    //return product;
-    console.log(this.shoppingCart.itemsMap)
-    console.log(productKey)
-    let item= this.shoppingCart.itemsMap[productKey];
-    console.log(item);
-    return item ?item.quantity : 0;
+    if(this.shoppingCart && this.item.productId)  {
+      let productKey = this.item.productId;
+      //return product;
+      console.log(this.shoppingCart.itemsMap)
+      console.log(productKey)
+      let item= this.shoppingCart.itemsMap[productKey];
+      console.log(item);
+      return item ?item.quantity : 0;
+    }
   }
 
   removeFromCart() {
-    this.cartService.removeFromCart(this.product);
+    this.cartService.removeFromCart(this.item);
   }
 }

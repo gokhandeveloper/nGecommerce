@@ -21,17 +21,17 @@ export class ProductServiceService {
   getProduct(productId:string) {
     return this.db.object('/products/'+productId).snapshotChanges()
       .pipe(map(a=> {
-        var product:Product= {whenShipping:"",productSummary:"",productName:"",key:"", price:0,category:"",imageUrl:""};
+        var product:Product= {whenShipping:"",productSummary:"",productName:"",productId:"", price:0,category:"",imageUrl:""};
         product.productName = a.payload.child('productName').val()
         product.imageUrl = a.payload.child('imageUrl').val()
         product.price = a.payload.child('price').val()
         product.productSummary= a.payload.child('productSummary').val()
          if(a.key!==null) {
-           product.key = a.key
+           product.productId = a.key
          }
         product.whenShipping="";
         product.category =a.payload.child('category').val();
-        console.log(product.key)
+        console.log(product.productId)
         return product;
 
       }))
@@ -40,17 +40,17 @@ export class ProductServiceService {
   getAll() {
     return this.db.list('products').snapshotChanges().pipe(
       map(actions => actions.map(a => {
-        var product:Product= {whenShipping:"", productSummary:"",productName:"",key:"", price:0,category:"",imageUrl:""};
+        var product:Product= {whenShipping:"", productSummary:"",productName:"",productId:"", price:0,category:"",imageUrl:""};
         product.productName = a.payload.child('productName').val()
         product.imageUrl = a.payload.child('imageUrl').val()
         product.price = a.payload.child('price').val()
         product.productSummary = a.payload.child('productSummary').val()
         if(a.key!==null) {
-          product.key = a.key
+          product.productId = a.key
         }
         product.whenShipping="";
         product.category = a.payload.child('category').val()
-        console.log(product.key)
+        console.log(product.productId)
         return product;
       }))
     );

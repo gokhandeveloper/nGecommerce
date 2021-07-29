@@ -62,19 +62,33 @@ export class ShoppingCartService {
 
     private async updateProduct(product: Product, change: number) {
       let cartId = await this.getOrCreateCartId();
-      let item$:Observable<any> = this.db.object('shopping-carts/'+ cartId + /items/ + product.key)
+      let item$:Observable<any> = this.db.object('shopping-carts/'+ cartId + /items/ + product.productId)
         .valueChanges();
 
-      let item$$= this.db.object('shopping-carts/'+ cartId + /items/ + product.key);
+      let item$$= this.db.object('shopping-carts/'+ cartId + /items/ + product.productId);
 
       item$.pipe(take(1)).subscribe(item =>{
-        if(item === null) item$$.set(
-          {title: product.productName,
-          imageUrl: product.imageUrl,
-          price: product.price});
-        else item$$.update(
-          {quantity: (item.quantity || 0)+ change});
+        if(item === null) {
+          item$$.set(
+            {title: product.productName,
+              imageUrl: product.imageUrl,
+              price: product.price,
+              quantity: 1});
+        }
+        else {
+          console.log(item.quantity)
+          item$$.update(
+            {quantity: (item.quantity || 0)+ change});
+        }
+
+
 
       })
     }
+
+  async cleartCart() {
+    let cartId= await this.getOrCreateCartId()
+    this.db.object('/shopping-carts/' + cartId + '/items').remove();
+
+  }
 }
