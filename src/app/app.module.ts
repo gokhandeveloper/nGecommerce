@@ -34,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from "@angular/material/icon";
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 import {ShoppingCart} from "../models/ShoppingCart";
+import { FooterComponentComponent } from './footer/footer-component/footer-component.component';
 
 const routes = [
   {path: '', component: ProductsComponent},
@@ -76,7 +77,8 @@ const routes = [
     ProductFormComponent,
     ForbiddenValidatorDirective,
     AdminCustomProductsComponent,
-    ProductQuantityComponent
+    ProductQuantityComponent,
+    FooterComponentComponent
 
   ],
   imports: [

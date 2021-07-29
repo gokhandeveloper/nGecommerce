@@ -1,4 +1,6 @@
 <app-navigation *ngIf="!checkLogin()"></app-navigation>
 <app-loggedin-navigation *ngIf="checkLogin()"></app-loggedin-navigation>
 <app-product-category></app-product-category>
+
 <router-outlet></router-outlet>
+<app-footer-component></app-footer-component>
