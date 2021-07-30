@@ -14,7 +14,7 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import {RouterModule} from "@angular/router";
-import { CheckoutComponent } from './checkout/checkout.component';
+import { CheckOutComponent } from './checkout/checkout.component';
 import { LoginComponent } from './login/login.component';
 import { TopWarningComponent } from './warning/top-warning/top-warning.component';
 import { ProductCategoryComponent } from './navigation/product-category/product-category.component';
@@ -35,6 +35,8 @@ import {MatIconModule} from "@angular/material/icon";
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 import {ShoppingCart} from "../models/ShoppingCart";
 import { FooterComponentComponent } from './footer/footer-component/footer-component.component';
+import {OrderService} from "./services/order/order.service";
+import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 
 const routes = [
   {path: '', component: ProductsComponent},
@@ -42,16 +44,15 @@ const routes = [
   {path: 'shopping-cart', component: ShoppingCartComponent},
   {path: 'login', component: LoginComponent},
 
-  {path: 'check-out', component: CheckoutComponent},
+  {path: 'check-out', component: CheckOutComponent},
   {path: 'my-orders', component: MyOrdersComponent, canActivate : [AuthguardComponent]},
-  {path: 'order-success', component: OrderSuccessComponent},
+  {path: 'order-success/:id', component: OrderSuccessComponent},
 
   {path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthguardComponent, AdminGuard]},
   {path: 'admin/products/:id', component: ProductFormComponent, canActivate: [AuthguardComponent, AdminGuard]},
   {path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthguardComponent, AdminGuard]},
 
   {path: 'admin/custom-blind-products', component: AdminCustomProductsComponent},
-
 
   {path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthguardComponent, AdminGuard]}
 
@@ -67,7 +68,7 @@ const routes = [
     MyOrdersComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
-    CheckoutComponent,
+    CheckOutComponent,
     LoginComponent,
     TopWarningComponent,
     ProductCategoryComponent,
@@ -78,7 +79,8 @@ const routes = [
     ForbiddenValidatorDirective,
     AdminCustomProductsComponent,
     ProductQuantityComponent,
-    FooterComponentComponent
+    FooterComponentComponent,
+    ShippingFormComponent
 
   ],
   imports: [
@@ -93,7 +95,9 @@ const routes = [
 
   ],
 
-  providers: [LoginService, AuthguardComponent, UserService, AdminGuard, ProductCategoryServiceService, ProductServiceService],
+  providers: [LoginService, AuthguardComponent,
+    UserService, AdminGuard,
+    ProductCategoryServiceService, ProductServiceService, OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

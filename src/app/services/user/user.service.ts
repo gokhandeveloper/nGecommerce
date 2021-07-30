@@ -7,6 +7,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class UserService {
+  user$: any;
 
   constructor(private userRepository: AngularFireDatabase) { }
 
