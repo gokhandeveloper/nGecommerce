@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Lato:300:400");
+@import url("//fonts.googleapis.com/css?family=Lato:300:400");
 
 body {
   margin:0;
@@ -6,7 +6,7 @@ body {
 footer {
   padding-top: 40px;
   margin-top:40px;
-  background-color: #9b2c2f;
+  background-color: #ff56a8;
   color: white;
 }
 footer p {

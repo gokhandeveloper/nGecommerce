@@ -5,3 +5,22 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.btn-primary {
+  background-color:#9a2c2e;
+  color:white;
+  border:none;
+}
+.btn-primary:hover {
+  background-color:#d45456;
+}
+.sign-in {
+  margin-right:15px;
+  font-weight: bolder;
+  color:#9a2c2e;
+  text-underline: none;
+  text-decoration: none;
+}
+.sign-in:hover {
+  font-weight: bolder;
+  color:#ff56a8;
+}

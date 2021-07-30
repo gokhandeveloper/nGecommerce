@@ -1,0 +1,146 @@
+//you can import this to firebase realtime database to get started
+{
+  "orders" : {
+    "-Mfr8iTub0prD-v2ve1Z" : {
+      "cart" : {
+        "items" : [ {
+          "imageUrl" : "https://live.staticflickr.com/4029/4362003264_41c4ca99f1_c_d.jpg",
+          "price" : 30.99,
+          "productId" : "-MfevmYzpd2jAZARj51z",
+          "quantity" : 3,
+          "title" : "Heart shaped chocolate",
+          "totalPrice" : 0
+        }, {
+          "imageUrl" : "https://www.raspberrypi.org/homepage-9df4b/static/raspberry-pi-os-32bit-3697e93ad6828805810ffa5f4651423c.jpg",
+          "price" : 99,
+          "productId" : "-Mfn0B0BOxwMmD9EDy7e",
+          "quantity" : 2,
+          "title" : "Raspberry Pie",
+          "totalPrice" : 0
+        } ],
+        "itemsMap" : {
+          "-MfevmYzpd2jAZARj51z" : {
+            "imageUrl" : "https://live.staticflickr.com/4029/4362003264_41c4ca99f1_c_d.jpg",
+            "price" : 30.99,
+            "quantity" : 3,
+            "title" : "Heart shaped chocolate"
+          },
+          "-Mfn0B0BOxwMmD9EDy7e" : {
+            "imageUrl" : "https://www.raspberrypi.org/homepage-9df4b/static/raspberry-pi-os-32bit-3697e93ad6828805810ffa5f4651423c.jpg",
+            "price" : 99,
+            "quantity" : 2,
+            "title" : "Raspberry Pie"
+          }
+        }
+      },
+      "dateOrderPlaced" : 1627644160314,
+      "items" : [ {
+        "product" : {
+          "imageUrl" : "https://live.staticflickr.com/4029/4362003264_41c4ca99f1_c_d.jpg",
+          "price" : 30.99,
+          "title" : "Heart shaped chocolate"
+        },
+        "quantity" : 3,
+        "totalPrice" : 0
+      }, {
+        "product" : {
+          "imageUrl" : "https://www.raspberrypi.org/homepage-9df4b/static/raspberry-pi-os-32bit-3697e93ad6828805810ffa5f4651423c.jpg",
+          "price" : 99,
+          "title" : "Raspberry Pie"
+        },
+        "quantity" : 2,
+        "totalPrice" : 0
+      } ],
+      "shipping" : {
+        "addressLine1" : "asdasdasdasd",
+        "city" : "asdasdasdadasdasd",
+        "name" : "asdasas"
+      },
+      "userId" : "v9315HRCInd5bdOCCVVtPvs0DX12"
+    }
+  },
+  "product_categories" : {
+    "birthday" : "birthday",
+    "electronics" : "electronics",
+    "flower" : "flower",
+    "gift" : "gift",
+    "mum and baby" : "mum and baby",
+    "toys" : "toys"
+  },
+  "products" : {
+    "-MfevmYzpd2jAZARj51z" : {
+      "category" : "birthday",
+      "imageUrl" : "https://live.staticflickr.com/4029/4362003264_41c4ca99f1_c_d.jpg",
+      "price" : 30.99,
+      "productName" : "Heart shaped chocolate",
+      "productSummary" : "https://www.flickr.com/photos/creative_tools/4362003264"
+    },
+    "-Mff1zZt6BDvQWnk8MX5" : {
+      "category" : "birthday",
+      "imageUrl" : "https://jkflorist.com/wp-content/uploads/2017/04/pic_17_1.jpg",
+      "price" : 89.99,
+      "productName" : "Flower and chocolate",
+      "productSummary" : "Basket full of chocolates and flowers"
+    },
+    "-Mfn0B0BOxwMmD9EDy7e" : {
+      "category" : "electronics",
+      "imageUrl" : "https://www.raspberrypi.org/homepage-9df4b/static/raspberry-pi-os-32bit-3697e93ad6828805810ffa5f4651423c.jpg",
+      "price" : 99,
+      "productName" : "Raspberry Pie",
+      "productSummary" : "For all your single board computer needs."
+    },
+    "-Mfn0fNxFNRPOUyCfRKz" : {
+      "category" : "electronics",
+      "imageUrl" : "https://ae01.alicdn.com/kf/Hb46c66d55bf94a9fa96d97d13a80c4b1e/Banana-pi-BPI-M2-Berry-quad-core-single-board-computer-same-size-as-raspberry-pi-3.jpg_Q90.jpg_.webp",
+      "price" : 109.7,
+      "productName" : "Banana Pie ",
+      "productSummary" : "Just like raspberry pie"
+    },
+    "-Mfn173PfEBdCF_B15VH" : {
+      "category" : "birthday",
+      "imageUrl" : "https://p0.pxfuel.com/preview/732/795/698/birthday-cake-dish-sweet.jpg",
+      "price" : 290.99,
+      "productName" : "Apple Pie Birthday Cake",
+      "productSummary" : "For her or for him!"
+    }
+  },
+  "shopping-carts" : {
+    "-MfmnrBOdnRjNqH6uXk0" : {
+      "dateCartCreated" : 1627571319576,
+      "items" : {
+        "-MfevmYzpd2jAZARj51z" : {
+          "imageUrl" : "https://live.staticflickr.com/4029/4362003264_41c4ca99f1_c_d.jpg",
+          "price" : 30.99,
+          "quantity" : 1,
+          "title" : "Heart shaped chocolate"
+        },
+        "-Mff1zZt6BDvQWnk8MX5" : {
+          "imageUrl" : "https://jkflorist.com/wp-content/uploads/2017/04/pic_17_1.jpg",
+          "price" : 89.99,
+          "quantity" : 2,
+          "title" : "Flower and chocolate"
+        },
+        "-Mfn0fNxFNRPOUyCfRKz" : {
+          "imageUrl" : "https://ae01.alicdn.com/kf/Hb46c66d55bf94a9fa96d97d13a80c4b1e/Banana-pi-BPI-M2-Berry-quad-core-single-board-computer-same-size-as-raspberry-pi-3.jpg_Q90.jpg_.webp",
+          "price" : 109.7,
+          "quantity" : 2,
+          "title" : "Banana Pie "
+        },
+        "-Mfn173PfEBdCF_B15VH" : {
+          "imageUrl" : "https://p0.pxfuel.com/preview/732/795/698/birthday-cake-dish-sweet.jpg",
+          "price" : 290.99,
+          "quantity" : 2,
+          "title" : "Apple Pie Birthday Cake"
+        }
+      }
+    }
+  },
+  "users" : {
+    "v9315HRCInd5bdOCCVVtPvs0DX12" : {
+      "email" : "x@gmail.com",
+      "isAdmin" : true,
+      "name" : "Gokhan Dilek",
+      "photo" : ""
+    }
+  }
+}
