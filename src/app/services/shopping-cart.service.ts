@@ -19,7 +19,7 @@ export class ShoppingCartService {
    // console.log(cartId);
     return this.db.object('/shopping-carts/' + cartId).snapshotChanges()
       .pipe(map(s =>
-          new ShoppingCart(s.payload.child("items").val())
+          new ShoppingCart(s.payload.key!,s.payload.child("items").val())
 
 
     ));

@@ -37,6 +37,11 @@ import {ShoppingCart} from "../models/ShoppingCart";
 import { FooterComponentComponent } from './footer/footer-component/footer-component.component';
 import {OrderService} from "./services/order/order.service";
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
+import {CoinbaseCommerceService} from "./services/payment/coinbase-commerce-service";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {CoinbaseCredentials} from "./services/payment/coinbaseCredentials";
+import { PaymentComponentCoinbaseComponent } from './payments/cryptocurrency/coinbase/payment-component-coinbase/payment-component-coinbase.component';
+import { PaymentComponentComponent } from './payments/payment-component/payment-component.component';
 
 const routes = [
   {path: '', component: ProductsComponent},
@@ -80,7 +85,9 @@ const routes = [
     AdminCustomProductsComponent,
     ProductQuantityComponent,
     FooterComponentComponent,
-    ShippingFormComponent
+    ShippingFormComponent,
+    PaymentComponentCoinbaseComponent,
+    PaymentComponentComponent
 
   ],
   imports: [
@@ -91,13 +98,16 @@ const routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,HttpClientModule
 
   ],
 
   providers: [LoginService, AuthguardComponent,
     UserService, AdminGuard,
-    ProductCategoryServiceService, ProductServiceService, OrderService],
+    ProductCategoryServiceService,
+    ProductServiceService,
+    OrderService,
+    CoinbaseCommerceService, HttpClient, CoinbaseCredentials],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -46,3 +46,5 @@ Thumbs.db
 #credentials
 src/environments/environment.prod.ts
 src/environments/environment.ts
+src/app/services/payment/coinbaseCredentials.ts
+/src/app/services/payment/coinbaseCredentials.ts
