@@ -1,3 +1,11 @@
-<button class="btn btn-primary" (click)="addToCart()"> + </button>
-{{getCartQuantity()}} in cart.
-<button class="btn btn-primary" (click)="removeFromCart()"> - </button>
+<div *ngIf="getCartQuantity()>0">
+  <button class="btn btn-primary" (click)="addToCart()"> + </button>
+  {{getCartQuantity()}} in cart.
+  <button class="btn btn-primary" (click)="removeFromCart()"> - </button>
+</div>
+<div *ngIf="getCartQuantity()===0">
+  <button class="btn btn-primary" (click)="addToCart()">Add to cart
+    <mat-icon _ngcontent-hxo-c65="" role="img" aria-hidden="false" aria-label="shopping cart" class="mat-icon notranslate material-icons mat-icon-no-color" data-mat-icon-type="font">shopping_cart</mat-icon>
+  </button>
+</div>
+

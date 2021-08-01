@@ -1,0 +1,9 @@
+.header-top {
+  font-size: 1rem;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #9a2c2e;
+  color: #fff;
+  font-size: .875rem;
+  transition: transform .4s ease-in-out;
+}
