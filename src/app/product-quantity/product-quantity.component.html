@@ -1,10 +1,14 @@
 <div *ngIf="getCartQuantity()>0">
-  <button class="btn btn-primary" (click)="addToCart()"> + </button>
-  {{getCartQuantity()}} in cart.
-  <button class="btn btn-primary" (click)="removeFromCart()"> - </button>
+
+ <div class="quantity">
+   <button class="btn btn-primary plus-btn" (click)="addToCart()"> + </button>
+   {{getCartQuantity()}} in cart.
+   <button class="btn btn-primary minus-btn" (click)="removeFromCart()"> - </button>
+ </div>
+
 </div>
 <div *ngIf="getCartQuantity()===0">
-  <button class="btn btn-primary" (click)="addToCart()">Add to cart
+  <button class="btn btn-primary add-to-card-button" (click)="addToCart()">Add to cart
     <mat-icon _ngcontent-hxo-c65="" role="img" aria-hidden="false" aria-label="shopping cart" class="mat-icon notranslate material-icons mat-icon-no-color" data-mat-icon-type="font">shopping_cart</mat-icon>
   </button>
 </div>
