@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {LoginService} from "./services/login/LoginService";
-import {AppUser} from "../models/app-user";
 
 @Component({
   selector: 'app-root',
@@ -9,14 +8,20 @@ import {AppUser} from "../models/app-user";
 })
 export class AppComponent {
   title = 'ChocolateBox';
-  appUser: AppUser | undefined ;
+  searchPhrase:string="";
   constructor(private loginService: LoginService) {
   }
+
   checkLogin() {
    return this.loginService.checkLogin();
 
   }
-  getUser() {
-    return this.loginService.getUser();
+
+  setSearch($event: string) {
+    this.searchPhrase = $event.toString();
+  }
+
+  getSearchPhrase() {
+    return this.searchPhrase;
   }
 }

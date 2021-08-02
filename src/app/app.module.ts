@@ -33,7 +33,6 @@ import {AdminCustomProductsComponent} from "./admin/admin-custom-products/admin-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from "@angular/material/icon";
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
-import {ShoppingCart} from "../models/ShoppingCart";
 import { FooterComponentComponent } from './footer/footer-component/footer-component.component';
 import {OrderService} from "./services/order/order.service";
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
@@ -42,6 +41,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {CoinbaseCredentials} from "./services/payment/coinbaseCredentials";
 import { PaymentComponentCoinbaseComponent } from './payments/cryptocurrency/coinbase/payment-component-coinbase/payment-component-coinbase.component';
 import { PaymentComponentComponent } from './payments/payment-component/payment-component.component';
+import {SearchFilterPipe} from "./shared/search-filter-pipe";
 
 const routes = [
   {path: '', component: ProductsComponent},
@@ -87,7 +87,8 @@ const routes = [
     FooterComponentComponent,
     ShippingFormComponent,
     PaymentComponentCoinbaseComponent,
-    PaymentComponentComponent
+    PaymentComponentComponent,
+    SearchFilterPipe
 
   ],
   imports: [
