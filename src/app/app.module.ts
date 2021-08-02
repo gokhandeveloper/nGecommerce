@@ -27,7 +27,7 @@ import {AdminGuard} from "./services/authguard/AdminGuard";
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import {FormsModule} from "@angular/forms";
 import {ProductCategoryServiceService} from "./services/product-category-service.service";
-import {ProductServiceService} from "./services/product-service.service";
+import {ProductService} from "./services/product.service";
 import {ForbiddenValidatorDirective} from "./admin/shared/forbidden-name.directive";
 import {AdminCustomProductsComponent} from "./admin/admin-custom-products/admin-custom-products.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -105,7 +105,7 @@ const routes = [
   providers: [LoginService, AuthguardComponent,
     UserService, AdminGuard,
     ProductCategoryServiceService,
-    ProductServiceService,
+    ProductService,
     OrderService,
     CoinbaseCommerceService, HttpClient, CoinbaseCredentials],
   bootstrap: [AppComponent]
