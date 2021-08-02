@@ -4,6 +4,9 @@
 <main-navigation *ngIf="!checkLogin()" (searchPhrase)="setSearch($event)"> </main-navigation>
 <loggedin-main-navigation *ngIf="checkLogin()"></loggedin-main-navigation>
 <product-category></product-category>
-<products [searchProductNameInput]="getSearchPhrase()"> </products>
-<!--<router-outlet></router-outlet>-->
+
+  <products *ngIf="getSearchPhrase()" [searchProductNameInput]="getSearchPhrase()"> </products>
+
+<router-outlet *ngIf="!getSearchPhrase()"></router-outlet>
 <app-footer-component></app-footer-component>
+

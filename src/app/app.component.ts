@@ -24,4 +24,8 @@ export class AppComponent {
   getSearchPhrase() {
     return this.searchPhrase;
   }
+
+  hideIfNotHome() {
+    return false;
+  }
 }
