@@ -1,0 +1,78 @@
+<div class="container">
+  <h1>Shopping Cart</h1>
+  <ng-container *ngIf="cart$ | async as cart">
+    <div class="row">
+      <div class="col-md-6">
+        <p *ngIf="cart.totalItemsCount>0">
+          You have {{cart.totalItemsCount}} products in your cart.
+          <button *ngIf="cart.totalItemsCount>0" (click)="clearCart()"
+                  class="btn-sm"
+          >Clear shopping cart</button>
+        </p>
+        <div *ngIf="cart.totalItemsCount==0">
+          <p>
+            You have not added anything to your cart
+          </p>
+          <p> <a routerLink="/">Let's go shopping!</a> </p>
+        </div>
+        <table class="table table-sm" *ngIf="cart.totalItemsCount>0">
+          <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of cart.items">
+            <div *ngIf="item.quantity>0">
+              <td>
+                {{item.title}}
+                <p>
+                  <img style="width:150px" src="{{item.imageUrl}}">
+                </p>
+              </td>
+
+              <td>
+                <product-quantity [product]="item"></product-quantity>
+              </td>
+
+              <td>
+                {{item.totalProductPrice | currency:'AUD':true}}
+              </td>
+            </div>
+
+          </tr>
+
+          </tbody>
+          <tfoot>
+          <tr>
+            <th></th>
+            <th></th>
+            <th class="float-end">
+             Order total: {{cart.totalPrice | currency:'AUD': true}}
+<!--              <p>-->
+<!--                <button class='btn btn-primary'*ngIf="cart.totalItemsCount>0"-->
+<!--                        routerLink="/check-out"-->
+<!--                >Checkout</button>-->
+<!--              </p>-->
+
+            </th>
+          </tr>
+          </tfoot>
+
+        </table>
+      </div>
+
+      <div *ngIf="cart.totalItemsCount>0" class="col-md-6">
+        <app-shipping-form></app-shipping-form>
+        <payment-component [cart]="cart"></payment-component>
+      </div>
+
+    </div>
+
+
+
+  </ng-container>
+
+</div>
