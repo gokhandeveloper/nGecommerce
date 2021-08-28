@@ -42,6 +42,7 @@ import {CoinbaseCredentials} from "./services/payment/coinbaseCredentials";
 import { PaymentComponentCoinbaseComponent } from './payments/cryptocurrency/coinbase/payment-component-coinbase/payment-component-coinbase.component';
 import { PaymentComponentComponent } from './payments/payment-component/payment-component.component';
 import {SearchFilterPipe} from "./shared/search-filter-pipe";
+import { ProductComponent } from './product/product.component';
 
 const routes = [
   {path: '', component: ProductsComponent},
@@ -88,7 +89,8 @@ const routes = [
     ShippingFormComponent,
     PaymentComponentCoinbaseComponent,
     PaymentComponentComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    ProductComponent
 
   ],
   imports: [
