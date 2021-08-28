@@ -1,0 +1,34 @@
+<div class="container-fluid">
+
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+
+    <div class="col" *ngFor="let product of filteredProductsByCategory | searchFilter : searchProductNameInput ">
+      <div class="card h-100 card-sl" >
+
+        <a routerLink="/product" [queryParams]="
+        {category: product.category, product: product.productId}"
+           class="nav-link" aria-current="page">
+
+        <img src="{{product.imageUrl}}" class="card-img-top" alt="...">
+        </a>
+        <div class="card-body">
+          <a routerLink="/product" [queryParams]="
+            {category: product.category, product: product.productId}">
+          <h5 class="card-title">      {{product.productName}}</h5>
+          </a>
+          <p class="card-text">          {{product.productSummary}}</p>
+        </div>
+        <div class="price">$ {{product.price}}</div>
+
+
+        <div class="review"></div>
+        <div class="card-footer">
+          <product-quantity class="add-to-card-button" [product]="product">
+          </product-quantity>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
