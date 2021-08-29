@@ -3,12 +3,19 @@
   <ng-container *ngIf="cart$ | async as cart">
     <div class="row">
       <div class="col-md-6">
-        <p *ngIf="cart.totalItemsCount>0">
+        <p *ngIf="cart.totalItemsCount>1">
           You have {{cart.totalItemsCount}} products in your cart.
           <button *ngIf="cart.totalItemsCount>0" (click)="clearCart()"
                   class="btn-sm"
           >Clear shopping cart</button>
         </p>
+        <p *ngIf="cart.totalItemsCount==1">
+          You have {{cart.totalItemsCount}} product in your cart.
+          <button *ngIf="cart.totalItemsCount==1" (click)="clearCart()"
+                  class="btn-sm"
+          >Clear shopping cart</button>
+        </p>
+
         <div *ngIf="cart.totalItemsCount==0">
           <p>
             You have not added anything to your cart

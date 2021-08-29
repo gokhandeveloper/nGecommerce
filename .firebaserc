@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "chocolate-box-app"
-  }
+    "default": "chocolate-box-app",
+    "productin": "chocolate-box-app"
+  },
+  "targets": {}
 }
