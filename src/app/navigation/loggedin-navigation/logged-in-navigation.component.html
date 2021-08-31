@@ -1,0 +1,62 @@
+<div class="container">
+  <header class="p-3 mb-3">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a routerLink="/">
+          <svg class="box-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 80" x="0px" y="0px"><g data-name="gift-giftbox-love-valentine-heart box"><path d="M21,21h6.1a5.64,5.64,0,0,1,.28-.91l-8.19-1.63a.936.936,0,0,0-.82.21.971.971,0,0,0-.37.77v5.12a.971.971,0,0,0,.37.77.936.936,0,0,0,.82.21l8.19-1.63A5.64,5.64,0,0,1,27.1,23H21a1,1,0,0,1,0-2Z"/><path d="M4.92,27.58a14.071,14.071,0,0,0,3.93,8.85L31,58.59V54.42L7.49,30.91A17.038,17.038,0,0,1,4.92,27.58Z"/><circle cx="32" cy="22" r="3"/><path d="M44.81,18.46l-8.19,1.63a5.64,5.64,0,0,1,.28.91H43a1,1,0,0,1,0,2H36.9a5.64,5.64,0,0,1-.28.91l8.19,1.63a.936.936,0,0,0,.82-.21.971.971,0,0,0,.37-.77V19.44a.971.971,0,0,0-.37-.77A.936.936,0,0,0,44.81,18.46Z"/><path d="M33,58.59l22.09-22.1a14.171,14.171,0,0,0,3.99-8.91,17.038,17.038,0,0,1-2.57,3.33L33,54.42Z"/><path d="M55.09,8.28a15.029,15.029,0,0,0-21.21,0L32.71,9.45a1.047,1.047,0,0,1-1.42,0L30.12,8.28A15,15,0,1,0,8.91,29.49L32,52.59l23.09-23.1a14.98,14.98,0,0,0,0-21.21ZM8.51,18.88a1,1,0,0,1-2,0A13,13,0,0,1,19.515,5.89a1,1,0,0,1,0,2,11,11,0,0,0-11,10.99ZM48,24.56a2.985,2.985,0,0,1-1.1,2.32,2.944,2.944,0,0,1-1.89.68,3.053,3.053,0,0,1-.6-.06l-9.07-1.81a4.913,4.913,0,0,1-6.68,0L19.59,27.5a3.053,3.053,0,0,1-.6.06,2.944,2.944,0,0,1-1.89-.68A2.985,2.985,0,0,1,16,24.56V19.44a3,3,0,0,1,3.59-2.94l9.07,1.81a4.913,4.913,0,0,1,6.68,0l9.07-1.81A3,3,0,0,1,48,19.44Z"/></g></svg>
+        </a>
+        <a routerLink="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+          <span class="logo" data-text="ChocolateBox" style="--shine-angle: 8deg;"><span>ChocolateBox</span></span>
+
+        </a>
+
+        <!--      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">-->
+        <!--        <li><a href="#" class="nav-link px-2 link-secondary">Overview</a></li>-->
+        <!--        <li><a href="#" class="nav-link px-2 link-dark">Inventory</a></li>-->
+        <!--        <li><a href="#" class="nav-link px-2 link-dark">Customers</a></li>-->
+        <!--        <li><a href="#" class="nav-link px-2 link-dark">Products</a></li>-->
+        <!--      </ul>-->
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a routerLink="shopping-cart" class="nav-link px-2 text-white"></a></li>
+        </ul>
+
+        <form #searchForm="ngForm" class="col-12 col-lg-4 mb-3 mb-lg-0 me-lg-3">
+          <input ngModel id="search" name="search" type="search" (keyup)="setSearchPhraseEvent(searchForm.value.search)"
+                 class="form-control form-control-dark"
+                 placeholder="Search delicious products..." aria-label="Search">
+        </form>
+
+
+        <div *ngIf="appUser" class="dropdown text-end sign-in">
+          <div>Welcome {{appUser.name}}</div>
+          <a style="cursor: pointer" appDropdown class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="{{appUser.photo}}" alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" routerLink="my-orders">My Orders</a></li>
+            <li><a class="dropdown-item" routerLink="check-out">Checkout</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a *ngIf="appUser.isAdmin" class="dropdown-item"routerLink="admin/products">Manage Products</a></li>
+            <li><a *ngIf="appUser.isAdmin" class="dropdown-item"routerLink="admin/custom-blind-products">Manage Custom Blinds</a></li>
+            <li><a *ngIf="appUser.isAdmin" class="dropdown-item"routerLink="admin/orders">Manage Orders</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="signOut()">Sign out</a></li>
+          </ul>
+        </div>
+        <div class="position-relative"><span class="badge">  </span>
+          <a routerLink="shopping-cart" class="sign-in">
+            CART
+            <mat-icon aria-hidden="false" aria-label="shopping cart">shopping_cart</mat-icon>
+            <span *ngIf="cart$ | async as cart" class="position-absolute top-0 start-100 translate-middle" style="color:#ff56a8;">
+            <span *ngIf="cart.totalItemsCount>0"> {{cart.totalItemsCount}}</span>
+          </span>
+
+          </a>
+        </div>
+
+
+      </div>
+    </div>
+  </header>
+
+</div>

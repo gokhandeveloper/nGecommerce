@@ -2,7 +2,7 @@
   <p data-open-accessibility-text-original="20px" style="font-size: 20px;">Enjoy Free Shipping on Orders Over $59.99</p>
 </div>
 <main-navigation *ngIf="!checkLogin()" (searchPhrase)="setSearch($event)"> </main-navigation>
-<loggedin-main-navigation *ngIf="checkLogin()"></loggedin-main-navigation>
+<loggedin-main-navigation *ngIf="checkLogin()" (searchPhrase)="setSearch($event)"></loggedin-main-navigation>
 <product-category></product-category>
 
   <products *ngIf="getSearchPhrase()" [searchProductNameInput]="getSearchPhrase()"> </products>
