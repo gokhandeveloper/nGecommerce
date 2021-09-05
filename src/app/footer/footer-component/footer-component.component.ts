@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponentComponent implements OnInit {
 
+  year:string = "";
+
   constructor() { }
 
   ngOnInit(): void {
+    this.year = new Date().getFullYear().toLocaleString().replace(",", "");
+    console.log(this.year);
+
   }
 
 }
