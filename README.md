@@ -18,7 +18,7 @@ Features:
 - Customers can sign-in using Google account
 - Auto-year updating footer 
 
-###Checkout
+### Checkout
 - One page checkout
 
 ### Payments
