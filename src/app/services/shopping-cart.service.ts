@@ -34,7 +34,7 @@ export class ShoppingCartService {
   async getOrCreateCartId(): Promise<string> {
     let cartId = localStorage.getItem('cartId');
 
-    console.log(cartId);
+   // console.log(cartId);
 
     if ((typeof cartId=='undefined'
       || !cartId || cartId==='' || cartId===null)) {

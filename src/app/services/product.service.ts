@@ -31,7 +31,7 @@ export class ProductService {
          }
         product.whenShipping="";
         product.category =a.payload.child('category').val();
-        console.log(product.productId)
+      //  console.log(product.productId)
         return product;
 
       }))
@@ -50,7 +50,7 @@ export class ProductService {
         }
         product.whenShipping="";
         product.category = a.payload.child('category').val()
-        console.log(product.productId)
+    //    console.log(product.productId)
         return product;
       }))
     );
